@@ -1,7 +1,10 @@
+const tripsEndpoint = require('../data/trips.json');
+
 const travel = (req, res) => {
     res.render('travel', {
         title: 'Travlr Getaways',
-        pageHeading: 'TRAVEL'
+        pageHeading: 'TRAVEL',
+        trips: tripsEndpoint
     });
 };
 
