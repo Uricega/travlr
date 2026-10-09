@@ -1,0 +1,119 @@
+<div class="container">
+  <div class="row">
+    <div class="col-md-12">
+
+      <h2>Add Trip</h2>
+
+      <form (ngSubmit)="addTrip()">
+
+        <!-- Trip Code -->
+        <div class="form-group">
+          <label for="code">Code</label>
+          <input
+            type="text"
+            class="form-control"
+            id="code"
+            name="code"
+            [(ngModel)]="newTrip.code"
+            required>
+        </div>
+
+        <!-- Trip Name -->
+        <div class="form-group">
+          <label for="name">Name</label>
+          <input
+            type="text"
+            class="form-control"
+            id="name"
+            name="name"
+            [(ngModel)]="newTrip.name"
+            required>
+        </div>
+
+        <!-- Trip Length -->
+        <div class="form-group">
+          <label for="length">Length</label>
+          <input
+            type="text"
+            class="form-control"
+            id="length"
+            name="length"
+            [(ngModel)]="newTrip.length"
+            required>
+        </div>
+
+        <!-- Start Date -->
+        <div class="form-group">
+          <label for="start">Start</label>
+          <input
+            type="date"
+            class="form-control"
+            id="start"
+            name="start"
+            [(ngModel)]="newTrip.start"
+            required>
+        </div>
+
+        <!-- Resort -->
+        <div class="form-group">
+          <label for="resort">Resort</label>
+          <input
+            type="text"
+            class="form-control"
+            id="resort"
+            name="resort"
+            [(ngModel)]="newTrip.resort"
+            required>
+        </div>
+
+        <!-- Price Per Person -->
+        <div class="form-group">
+          <label for="perPerson">Price Per Person</label>
+          <input
+            type="text"
+            class="form-control"
+            id="perPerson"
+            name="perPerson"
+            [(ngModel)]="newTrip.perPerson"
+            required>
+        </div>
+
+        <!-- Trip Image -->
+        <div class="form-group">
+          <label for="image">Image</label>
+          <input
+            type="text"
+            class="form-control"
+            id="image"
+            name="image"
+            [(ngModel)]="newTrip.image"
+            required>
+        </div>
+
+        <!-- Description -->
+        <div class="form-group">
+          <label for="description">Description</label>
+          <textarea
+            class="form-control"
+            id="description"
+            name="description"
+            [(ngModel)]="newTrip.description"
+            rows="4"
+            required>
+          </textarea>
+        </div>
+
+        <br>
+
+        <!-- Submit Button -->
+        <button
+          type="submit"
+          class="btn btn-primary">
+          Add Trip
+        </button>
+
+      </form>
+
+    </div>
+  </div>
+</div>
