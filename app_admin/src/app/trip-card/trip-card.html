@@ -17,5 +17,12 @@
       <strong>Length:</strong> {{ trip.length }}<br />
       <strong>Price per person:</strong> {{ trip.perPerson }}
     </p>
+
+    <a
+      [routerLink]="['/edit-trip', trip.code]"
+      class="btn btn-primary"
+    >
+      Edit Trip
+    </a>
   </div>
 </div>

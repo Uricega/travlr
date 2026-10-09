@@ -1,0 +1,64 @@
+<h2>Edit Trip</h2>
+<p>Trip loaded: {{ trip?.name }}</p>
+<p>Trip available: {{ !!trip }}</p>
+
+<p *ngIf="errorMessage" style="color: red;">
+  {{ errorMessage }}
+</p>
+
+<form *ngIf="trip" (ngSubmit)="updateTrip()" #tripForm="ngForm">
+
+  <div>
+    <label for="code">Code</label>
+    <input id="code" name="code" [(ngModel)]="trip.code" readonly>
+  </div>
+
+  <div>
+    <label for="name">Name</label>
+    <input id="name" name="name" [(ngModel)]="trip.name" required>
+  </div>
+
+  <div>
+    <label for="length">Length</label>
+    <input id="length" name="length" [(ngModel)]="trip.length" required>
+  </div>
+
+  <div>
+    <label for="start">Start</label>
+    <input id="start" name="start" type="date"
+           [(ngModel)]="trip.start" required>
+  </div>
+
+  <div>
+    <label for="resort">Resort</label>
+    <input id="resort" name="resort" [(ngModel)]="trip.resort" required>
+  </div>
+
+  <div>
+    <label for="perPerson">Price Per Person</label>
+    <input id="perPerson" name="perPerson"
+           [(ngModel)]="trip.perPerson" required>
+  </div>
+
+  <div>
+    <label for="image">Image</label>
+    <input id="image" name="image" [(ngModel)]="trip.image" required>
+  </div>
+
+  <div>
+    <label for="description">Description</label>
+    <textarea id="description" name="description"
+              [(ngModel)]="trip.description" required></textarea>
+  </div>
+
+  <br>
+
+  <button type="submit" [disabled]="tripForm.invalid">
+    Update Trip
+  </button>
+
+  <button type="button" (click)="cancel()">
+    Cancel
+  </button>
+
+</form>

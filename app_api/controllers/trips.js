@@ -104,8 +104,51 @@ const tripsAddTrip = async (req, res) => {
 };
 
 // Export controller functions
+// PUT: /api/trips/:tripCode
+// Update an existing trip
+const tripsUpdateTrip = async (req, res) => {
+  try {
+    const tripCode = req.params.tripCode;
+
+    const updatedTrip = await Trip.findOneAndUpdate(
+      { code: tripCode },
+      {
+        $set: {
+          name: req.body.name,
+          length: req.body.length,
+          start: req.body.start,
+          resort: req.body.resort,
+          perPerson: req.body.perPerson,
+          image: req.body.image,
+          description: req.body.description
+        }
+      },
+      {
+        new: true,
+        runValidators: true
+      }
+    );
+
+    if (!updatedTrip) {
+      return res.status(404).json({
+        message: 'Trip not found'
+      });
+    }
+
+    return res.status(200).json(updatedTrip);
+
+  } catch (err) {
+    console.error('Error updating trip:', err);
+
+    return res.status(500).json({
+      message: 'Error updating trip',
+      error: err.message
+    });
+  }
+};
 module.exports = {
   tripsList,
   tripsFindByCode,
-  tripsAddTrip
-};;
+  tripsAddTrip,
+  tripsUpdateTrip
+};
