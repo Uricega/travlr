@@ -1,3 +1,5 @@
+require('dotenv').config();
+
 var createError = require('http-errors');
 var express = require('express');
 var path = require('path');
@@ -10,6 +12,7 @@ var usersRouter = require('./routes/users');
 
 require('./app_server/models/db');
 require('./app_server/models/travlr');
+require('./app_api/models/users');
 
 var apiRouter = require('./app_api/routes/index');
 

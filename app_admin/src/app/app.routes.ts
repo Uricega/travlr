@@ -2,6 +2,7 @@ import { Routes } from '@angular/router';
 import { TripList } from './trip-list/trip-list';
 import { AddTrip } from './add-trip/add-trip';
 import { EditTrip } from './edit-trip/edit-trip';
+import { Login } from './login/login';
 
 export const routes: Routes = [
   {
@@ -13,7 +14,11 @@ export const routes: Routes = [
     component: AddTrip
   },
   {
-    path: 'edit-trip/:tripCode',
+      path: 'edit-trip/:tripCode',
     component: EditTrip
+  },
+  {
+    path: 'login',
+    component: Login
   }
 ];
